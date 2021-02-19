@@ -1,12 +1,5 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col cols="6">
-        <v-alert border="top" color="red lighten-2" dark>
-          I'm an alert with a top border and red color
-        </v-alert>
-      </v-col>
-    </v-row>
     <v-row class="text-center">
       <v-col cols="12">
         <v-img

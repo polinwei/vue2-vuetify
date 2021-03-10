@@ -1,8 +1,14 @@
 <template>
   <!-- App.vue -->
   <v-app>
+    <!-- 頂部導覽列 -->
+    <v-app-bar app>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <router-link to="/" class="mx-2">Home</router-link>
+      <router-link to="/about" class="mx-2">About</router-link>
+    </v-app-bar>
     <!-- 側邊導覽列 -->
-    <v-navigation-drawer app expand-on-hover v-model="drawer">
+    <v-navigation-drawer app v-model="drawer">
       <!-- 網頁標題 -->
       <v-list-item to="/">
         <v-list-item-content>
@@ -28,11 +34,6 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
-    <!-- 頂部導覽列 -->
-    <v-app-bar app color="blue" dark collapse>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-    </v-app-bar>
 
     <!-- Sizes your content based upon application components -->
     <v-main>

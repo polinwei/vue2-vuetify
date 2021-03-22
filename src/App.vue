@@ -107,42 +107,7 @@ export default {
       xls: "mdi-file-excel",
     },
     tree: [],
-    items:[],
-    treeItems: [
-      {
-        name: "Home",
-        file: "home",
-        to: "/home",
-      },
-      {
-        name: "Menu Demo",
-        children: [
-          {
-            name: "TreeMenu",
-            file: "tree",
-            to: "/learning-TreeMenu",
-            codepen: "OJbYdBJ",
-          },
-          {
-            name: "ListMenu",
-            file: "tree",
-            to: "/learning-ListMenu",
-            codepen: "NWbVqqW",
-          },
-        ],
-      },
-      {
-        name: "Layout Demo",
-        children: [
-          {
-            name: "Top&Aside",
-            file: "tree",
-            to: "/learning-Top&Aside",
-            codepen: "ExNMEdP",
-          },
-        ],
-      },
-    ],
+    treeItems:[],    
     open: [1, 2],
     search: null,
     caseSensitive: false,
@@ -182,7 +147,7 @@ export default {
 
     fetch("https://fir-1a50d-default-rtdb.firebaseio.com/vue2-spa/treeMenu.json")
       .then((res) => res.json())
-      .then((res) => (this.items = res));
+      .then((res) => (this.treeItems = res));
 
     if (!this.isDesktop()) {
       this.drawer = false;

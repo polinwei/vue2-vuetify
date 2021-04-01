@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    
     <v-card width="500" class="mx-auto my-auto">
       <v-card-title>
         <h1>Login</h1>
@@ -32,7 +33,6 @@
         <v-btn color="info" @click="btnLogin">Login</v-btn>
       </v-card-actions>
     </v-card>
-
     <v-snackbar
       v-model="snackbar"
       :timeout="msg.timeout"
@@ -65,7 +65,6 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/database";
-//import * as firebaseui from "firebaseui";
 
 export default {
   data() {
@@ -73,7 +72,6 @@ export default {
       overlay: false,
       showPassword: false,
       snackbar: false,
-      ui: null,
       fbUser: {},
       firebaseConfig: {
         apiKey: "AIzaSyB71LK8t6JZAUupd42bp4AXUxYOSdexUF0",
@@ -225,8 +223,6 @@ export default {
   created() {
     // Initialize Firebase
     firebase.initializeApp(this.firebaseConfig);
-    // Initialize the FirebaseUI Widget using Firebase.
-    //this.ui = new firebaseui.auth.AuthUI(firebase.auth());
   },
 };
 </script>

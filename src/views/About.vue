@@ -1,44 +1,40 @@
 <template>
-  <v-container>
-    
-      <v-card class="mx-auto my-auto" max-width="1024">
-        <v-img
-          lazy-src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"          
-          src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-          max-height="300"
-          aspect-ratio="2"
+  <v-card class="mx-auto my-auto" max-width="1024">
+    <v-img
+      lazy-src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"          
+      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+      max-height="300"
+      aspect-ratio="2"
+    >
+      <v-card-title class="white--text mt-8">
+        <p class="ml-3">
+          使用的套件列表
+        </p>
+      </v-card-title>
+    </v-img>
+
+    <v-card-text>
+      <div class="font-weight-bold ml-8 mb-2">
+        Today
+      </div>
+
+      <v-timeline align-top dense>
+        <v-timeline-item
+          v-for="message in messages"
+          :key="message.time"
+          :color="message.color"
+          small
         >
-          <v-card-title class="white--text mt-8">
-            <p class="ml-3">
-              使用的套件列表
-            </p>
-          </v-card-title>
-        </v-img>
-
-        <v-card-text>
-          <div class="font-weight-bold ml-8 mb-2">
-            Today
+          <div>
+            <div class="font-weight-normal">
+              <strong><a :href=message.link target="_blank"> {{ message.from }}</a></strong> @{{ message.time }}
+            </div>
+            <div>{{ message.message }}</div>                
           </div>
-
-          <v-timeline align-top dense>
-            <v-timeline-item
-              v-for="message in messages"
-              :key="message.time"
-              :color="message.color"
-              small
-            >
-              <div>
-                <div class="font-weight-normal">
-                  <strong><a :href=message.link target="_blank"> {{ message.from }}</a></strong> @{{ message.time }}
-                </div>
-                <div>{{ message.message }}</div>                
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
-      </v-card>
-    
-  </v-container>
+        </v-timeline-item>
+      </v-timeline>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>

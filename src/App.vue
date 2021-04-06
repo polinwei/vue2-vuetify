@@ -54,11 +54,11 @@
         @update:active="treeNodeClick"
       >
         <template v-slot:prepend="{ item, open }">
-          <v-icon v-if="!item.file">
+          <v-icon v-if="!item.icon">
             {{ open ? "mdi-folder-open" : "mdi-folder" }}
           </v-icon>
           <v-icon v-else>
-            {{ files[item.file] }}
+            {{ icons[item.icon] }}
           </v-icon>
         </template>
       </v-treeview>
@@ -94,7 +94,7 @@ export default {
     drawer: true,
     topNav: [],
     initiallyOpen: ["public"],
-    files: {
+    icons: {
       home: "mdi-home",
       tree: "mdi-file-tree",
       html: "mdi-language-html5",
